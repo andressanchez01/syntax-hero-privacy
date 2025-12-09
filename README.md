@@ -11,20 +11,20 @@ Este repositorio contiene la política de privacidad de la aplicación SyntaxHer
 Una vez que este repositorio esté en GitHub y GitHub Pages esté habilitado, la política estará disponible en:
 
 ```
-https://andressanchez01.github.io/astronix-academy-privacy/privacy-policy.html
+https://andressanchez01.github.io/syntax-hero-privacy/privacy-policy.html
 ```
 
 ## 📝 Instrucciones para Publicar
 
 1. **Crea un repositorio PÚBLICO en GitHub**:
    - Ve a: https://github.com/new
-   - Nombre: `astronix-academy-privacy` (o el que prefieras)
+   - Nombre: `syntax-hero-privacy` (o el que prefieras)
    - Visibilidad: **PÚBLICO** ✅
    - NO inicialices con README
 
 2. **Conecta este repositorio local con GitHub**:
    ```bash
-   git remote add origin https://github.com/andressanchez01/astronix-academy-privacy.git
+   git remote add origin https://github.com/andressanchez01/syntax-hero-privacy.git
    git push -u origin main
    ```
 
@@ -35,7 +35,7 @@ https://andressanchez01.github.io/astronix-academy-privacy/privacy-policy.html
 
 4. **Espera 1-5 minutos** y visita:
    ```
-   https://andressanchez01.github.io/astronix-academy-privacy/privacy-policy.html
+   https://andressanchez01.github.io/syntax-hero-privacy/privacy-policy.html
    ```
 
 5. **Usa la URL en Google Play Console** 🎯
@@ -55,4 +55,4 @@ Para actualizar la política:
 
 ## 📧 Contacto
 
-Para preguntas sobre la política de privacidad, contacta a: soporte@astronix-academy.com
+Para preguntas sobre la política de privacidad, contacta a: astronixdigital@gmail.com
