@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Cuenta y Datos - SyntaxHero</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        .app-name {
+            font-size: 1.2em;
+            color: #3498db;
+            margin-bottom: 5px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1em;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+        }
+        
+        h2:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        strong {
+            color: #2c3e50;
+        }
+        
+        .steps-container {
+            background-color: #e8f6f3;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid #1abc9c;
+        }
+        
+        .steps-container h3 {
+            color: #16a085;
+            margin-top: 0;
+        }
+        
+        .steps-container ol {
+            margin-bottom: 0;
+        }
+        
+        .steps-container li {
+            margin-bottom: 12px;
+            padding-left: 10px;
+        }
+        
+        .email-link {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        
+        .email-link:hover {
+            background-color: #2980b9;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .data-table th, .data-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .data-table th {
+            background-color: #34495e;
+            color: white;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .delete-badge {
+            background-color: #e74c3c;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.85em;
+        }
+        
+        .retain-badge {
+            background-color: #f39c12;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.85em;
+        }
+        
+        .warning-box {
+            background-color: #fff3cd;
+            padding: 20px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .warning-box h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .info-box {
+            background-color: #d1ecf1;
+            padding: 20px;
+            border-left: 4px solid #17a2b8;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .info-box h4 {
+            color: #0c5460;
+            margin-bottom: 10px;
+        }
+        
+        .contact-section {
+            background-color: #ecf0f1;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .contact-section h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        .timeline {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-badge {
+            background-color: #3498db;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 50%;
+            margin-right: 15px;
+            font-weight: bold;
+            min-width: 30px;
+            text-align: center;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
+            
+            h2 {
+                font-size: 1.3em;
+            }
+            
+            .data-table {
+                font-size: 0.9em;
+            }
+            
+            .data-table th, .data-table td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p class="app-name">🚀 SyntaxHero</p>
+            <h1>Eliminación de Cuenta y Datos</h1>
+            <p class="subtitle">Solicita la eliminación completa de tu cuenta y datos asociados</p>
+        </div>
+
+        <h2>Acerca de SyntaxHero</h2>
+        <p><strong>SyntaxHero</strong> (anteriormente conocida como Astronix Academy) es una aplicación educativa desarrollada por <strong>Astronix Digital</strong> disponible en Google Play Store. Esta página te permite solicitar la eliminación de tu cuenta y todos los datos personales asociados a ella.</p>
+
+        <h2>Pasos para Solicitar la Eliminación de tu Cuenta</h2>
+        
+        <div class="steps-container">
+            <h3>📋 Sigue estos pasos:</h3>
+            <ol>
+                <li><strong>Envía un correo electrónico</strong> a <strong>astronixdigital@gmail.com</strong> con el asunto: <em>"Solicitud de eliminación de cuenta - SyntaxHero"</em></li>
+                <li><strong>Incluye en el correo:</strong>
+                    <ul>
+                        <li>Tu nombre de usuario registrado en SyntaxHero</li>
+                        <li>El correo electrónico asociado a tu cuenta</li>
+                        <li>Confirmación de que deseas eliminar tu cuenta y todos los datos asociados</li>
+                    </ul>
+                </li>
+                <li><strong>Espera confirmación:</strong> Recibirás un correo de confirmación dentro de las siguientes <strong>48 horas hábiles</strong></li>
+                <li><strong>Verificación de identidad:</strong> Por seguridad, te enviaremos un código de verificación al correo registrado en tu cuenta</li>
+                <li><strong>Procesamiento:</strong> Una vez verificada tu identidad, procederemos a eliminar tu cuenta en un plazo máximo de <strong>30 días</strong></li>
+            </ol>
+        </div>
+
+        <p style="text-align: center;">
+            <a href="mailto:astronixdigital@gmail.com?subject=Solicitud%20de%20eliminaci%C3%B3n%20de%20cuenta%20-%20SyntaxHero&body=Hola%2C%0A%0ASolicito%20la%20eliminaci%C3%B3n%20de%20mi%20cuenta%20de%20SyntaxHero.%0A%0ANombre%20de%20usuario%3A%20%5BTu%20nombre%20de%20usuario%5D%0ACorreo%20registrado%3A%20%5BTu%20correo%5D%0A%0AConfirmo%20que%20deseo%20eliminar%20mi%20cuenta%20y%20todos%20los%20datos%20asociados.%0A%0AGracias." class="email-link">
+                📧 Enviar Solicitud de Eliminación
+            </a>
+        </p>
+
+        <h2>Datos que Serán Eliminados</h2>
+        <p>Cuando solicites la eliminación de tu cuenta, los siguientes datos serán <strong>eliminados permanentemente</strong>:</p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Tipo de Dato</th>
+                    <th>Descripción</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Información de cuenta</strong></td>
+                    <td>Nombre de usuario, correo electrónico, contraseña encriptada</td>
+                    <td><span class="delete-badge">Se elimina</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Perfil de usuario</strong></td>
+                    <td>Biografía, fecha de nacimiento, teléfono (si fue proporcionado)</td>
+                    <td><span class="delete-badge">Se elimina</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Progreso de aprendizaje</strong></td>
+                    <td>Lecciones completadas, ejercicios resueltos, series finalizadas</td>
+                    <td><span class="delete-badge">Se elimina</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Puntos y logros</strong></td>
+                    <td>Puntos acumulados, logros desbloqueados, badges obtenidos</td>
+                    <td><span class="delete-badge">Se elimina</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Rachas y estadísticas</strong></td>
+                    <td>Días consecutivos de uso, estadísticas de aprendizaje</td>
+                    <td><span class="delete-badge">Se elimina</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Respuestas a ejercicios</strong></td>
+                    <td>Código enviado, respuestas a preguntas, historial de intentos</td>
+                    <td><span class="delete-badge">Se elimina</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Dispositivos registrados</strong></td>
+                    <td>Información de dispositivos asociados a tu cuenta</td>
+                    <td><span class="delete-badge">Se elimina</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Tokens de notificación</strong></td>
+                    <td>Tokens para notificaciones push</td>
+                    <td><span class="delete-badge">Se elimina</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Preferencias y configuración</strong></td>
+                    <td>Preferencias de la aplicación, configuración personal</td>
+                    <td><span class="delete-badge">Se elimina</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Datos que Pueden Conservarse</h2>
+        <p>Algunos datos pueden conservarse por un período limitado después de la eliminación de tu cuenta, según lo requiera la ley o por razones legítimas de negocio:</p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Tipo de Dato</th>
+                    <th>Motivo de Retención</th>
+                    <th>Período de Retención</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Registros de transacciones</strong></td>
+                    <td>Cumplimiento de obligaciones fiscales y contables</td>
+                    <td><span class="retain-badge">Hasta 5 años</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Registros de seguridad</strong></td>
+                    <td>Prevención de fraude y seguridad del sistema</td>
+                    <td><span class="retain-badge">Hasta 1 año</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Datos anonimizados</strong></td>
+                    <td>Estadísticas agregadas que no te identifican personalmente</td>
+                    <td><span class="retain-badge">Indefinido</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Solicitudes legales</strong></td>
+                    <td>Si hay una investigación legal activa o disputa pendiente</td>
+                    <td><span class="retain-badge">Hasta resolución</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="info-box">
+            <h4>ℹ️ Nota sobre datos anonimizados</h4>
+            <p>Los datos estadísticos agregados y anonimizados (por ejemplo, número total de ejercicios completados por todos los usuarios) no contienen información que te identifique personalmente y pueden conservarse indefinidamente para mejorar nuestros servicios.</p>
+        </div>
+
+        <h2>Tiempo de Procesamiento</h2>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="timeline-badge">1</span>
+                <div>
+                    <strong>Confirmación de recepción:</strong> Dentro de 48 horas hábiles después de recibir tu solicitud.
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-badge">2</span>
+                <div>
+                    <strong>Verificación de identidad:</strong> 1-3 días hábiles para verificar que eres el propietario de la cuenta.
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-badge">3</span>
+                <div>
+                    <strong>Eliminación completa:</strong> Máximo 30 días desde la verificación de identidad para eliminar todos tus datos.
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-badge">4</span>
+                <div>
+                    <strong>Confirmación final:</strong> Recibirás un correo confirmando que tu cuenta y datos han sido eliminados.
+                </div>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>⚠️ Importante: Esta acción es irreversible</h4>
+            <p>Una vez que eliminemos tu cuenta:</p>
+            <ul style="margin-bottom: 0;">
+                <li>No podrás acceder a tu cuenta ni a tu progreso de aprendizaje</li>
+                <li>Perderás todos tus puntos, logros y rachas acumulados</li>
+                <li>No podrás recuperar el historial de ejercicios completados</li>
+                <li>Si deseas usar SyntaxHero nuevamente, deberás crear una cuenta nueva desde cero</li>
+                <li>Las suscripciones premium activas deben cancelarse por separado desde Google Play antes de solicitar la eliminación</li>
+            </ul>
+        </div>
+
+        <h2>Cancelar Suscripción Premium</h2>
+        <p>Si tienes una suscripción premium activa, debes cancelarla antes de solicitar la eliminación de tu cuenta:</p>
+        <ol>
+            <li>Abre la app de <strong>Google Play Store</strong> en tu dispositivo</li>
+            <li>Toca tu foto de perfil → <strong>Pagos y suscripciones</strong> → <strong>Suscripciones</strong></li>
+            <li>Selecciona <strong>SyntaxHero</strong> y toca <strong>Cancelar suscripción</strong></li>
+            <li>Una vez cancelada, procede con la solicitud de eliminación de cuenta</li>
+        </ol>
+        <p><strong>Nota:</strong> La eliminación de tu cuenta no cancela automáticamente las suscripciones gestionadas por Google Play.</p>
+
+        <h2>Contacto</h2>
+        <div class="contact-section">
+            <h3>📬 Información de Contacto</h3>
+            <p>Si tienes preguntas sobre el proceso de eliminación de cuenta o necesitas ayuda adicional:</p>
+            <ul>
+                <li><strong>Correo electrónico:</strong> <a href="mailto:astronixdigital@gmail.com">astronixdigital@gmail.com</a></li>
+                <li><strong>Desarrollador:</strong> Astronix Digital</li>
+                <li><strong>Aplicación:</strong> SyntaxHero (disponible en Google Play Store)</li>
+            </ul>
+            <p>Respondemos a todas las solicitudes dentro de 48 horas hábiles.</p>
+        </div>
+
+        <h2>Política de Privacidad</h2>
+        <p>Para más información sobre cómo recopilamos, usamos y protegemos tu información, consulta nuestra <a href="privacy-policy.html">Política de Privacidad</a> completa.</p>
+
+        <hr style="margin: 40px 0; border: none; border-top: 2px solid #ecf0f1;">
+        
+        <p style="text-align: center; color: #7f8c8d; font-size: 0.9em;">
+            <strong>Última actualización:</strong> 11 de diciembre de 2024<br>
+            <strong>Aplicación:</strong> SyntaxHero (Astronix Academy)<br>
+            <strong>Desarrollador:</strong> Astronix Digital
+        </p>
+
+        <p style="text-align: center;">
+            <a href="privacy-policy.html" class="back-link">← Volver a la Política de Privacidad</a>
+        </p>
+    </div>
+</body>
+</html>
+
