@@ -1,11 +1,12 @@
-# Política de Privacidad y Eliminación de Cuenta - SyntaxHero
+# SyntaxHero - Sitio Web y Políticas
 
-Este repositorio contiene las páginas legales de la aplicación SyntaxHero (Astronix Academy) requeridas por Google Play Store.
+Este repositorio contiene el sitio web informativo de SyntaxHero y las políticas de privacidad y eliminación de datos.
 
 ## 📄 Archivos
 
 | Archivo | Descripción | URL en GitHub Pages |
 |---------|-------------|---------------------|
+| `index.html` | Landing page informativa de la aplicación | `/` |
 | `privacy-policy.html` | Política de privacidad completa | `/privacy-policy.html` |
 | `delete-account.html` | Página de eliminación de cuenta y datos | `/delete-account.html` |
 
@@ -13,11 +14,18 @@ Este repositorio contiene las páginas legales de la aplicación SyntaxHero (Ast
 
 Una vez publicado en GitHub Pages, las URLs serán:
 
+**Sitio Web (Landing Page):**
 ```
-Política de Privacidad:
-https://andressanchez01.github.io/syntax-hero-privacy/privacy-policy.html
+https://andressanchez01.github.io/syntax-hero-privacy/
+```
 
-Eliminación de Cuenta y Datos:
+**Política de Privacidad:**
+```
+https://andressanchez01.github.io/syntax-hero-privacy/privacy-policy.html
+```
+
+**Eliminación de Cuenta y Datos:**
+```
 https://andressanchez01.github.io/syntax-hero-privacy/delete-account.html
 ```
 
@@ -34,11 +42,8 @@ https://andressanchez01.github.io/syntax-hero-privacy/delete-account.html
 
 ```bash
 cd privacy-policy-repo
-git init
-git add .
-git commit -m "Agregar política de privacidad y página de eliminación de cuenta"
-git branch -M main
 git remote add origin https://github.com/andressanchez01/syntax-hero-privacy.git
+git branch -M main
 git push -u origin main
 ```
 
@@ -52,57 +57,60 @@ git push -u origin main
 
 Espera 1-5 minutos y visita las URLs:
 
-- Política de Privacidad: `https://andressanchez01.github.io/syntax-hero-privacy/privacy-policy.html`
-- Eliminación de Cuenta: `https://andressanchez01.github.io/syntax-hero-privacy/delete-account.html`
+- **Landing Page:** `https://andressanchez01.github.io/syntax-hero-privacy/`
+- **Política de Privacidad:** `https://andressanchez01.github.io/syntax-hero-privacy/privacy-policy.html`
+- **Eliminación de Cuenta:** `https://andressanchez01.github.io/syntax-hero-privacy/delete-account.html`
 
 ### 5. Configurar en Google Play Console
 
 1. Ve a tu app en [Google Play Console](https://play.google.com/console)
-2. **Política de Privacidad**:
+2. **Sitio Web**:
+   - Ve a: Información de la app → Detalles de la app
+   - Ingresa: `https://andressanchez01.github.io/syntax-hero-privacy/`
+3. **Política de Privacidad**:
    - Ve a: Política → Contenido de la aplicación → Política de privacidad
-   - Ingresa la URL de `privacy-policy.html`
-3. **Eliminación de Cuenta**:
+   - Ingresa: `https://andressanchez01.github.io/syntax-hero-privacy/privacy-policy.html`
+4. **Eliminación de Cuenta**:
    - Ve a: Política → Contenido de la aplicación → Eliminación de la cuenta
-   - Ingresa la URL de `delete-account.html`
+   - Ingresa: `https://andressanchez01.github.io/syntax-hero-privacy/delete-account.html`
 
-## 📋 Contenido de la Página de Eliminación de Cuenta
+## 🎨 Características del Sitio
 
-La página de eliminación de cuenta cumple con los requisitos de Google Play Store:
+- ✅ **Landing Page Informativa**: Presenta la app con características principales
+- ✅ **Navegación Consistente**: Barra superior en todas las páginas con enlaces rápidos
+- ✅ **Diseño Responsive**: Se adapta a móviles, tablets y escritorio
+- ✅ **Enlaces Rápidos**: Acceso fácil a políticas desde cualquier página
+- ✅ **Diseño Moderno**: Interfaz atractiva con gradientes y animaciones
 
-✅ **Referencia al nombre de la app**: SyntaxHero (Astronix Academy) y desarrollador Astronix Digital
+## 📋 Contenido de las Páginas
 
-✅ **Pasos para solicitar eliminación**:
-1. Enviar correo a astronixdigital@gmail.com
-2. Incluir nombre de usuario y correo registrado
-3. Esperar confirmación (48 horas)
-4. Verificación de identidad
-5. Procesamiento (máximo 30 días)
+### Landing Page (`index.html`)
+- Presentación de la aplicación
+- Características principales
+- Información sobre la app
+- Enlaces a descarga en Google Play
 
-✅ **Tipos de datos que se eliminan**:
-- Información de cuenta (usuario, email, contraseña)
-- Perfil de usuario
-- Progreso de aprendizaje
-- Puntos y logros
-- Rachas y estadísticas
-- Respuestas a ejercicios
-- Dispositivos registrados
-- Tokens de notificación
-- Preferencias y configuración
+### Política de Privacidad (`privacy-policy.html`)
+- Información detallada sobre recopilación de datos
+- Uso de datos personales
+- Compartir con terceros (AdMob, etc.)
+- Derechos del usuario
+- Cumplimiento regulatorio (GDPR, CCPA, COPPA)
 
-✅ **Datos que se conservan y períodos de retención**:
-- Registros de transacciones: hasta 5 años (obligaciones fiscales)
-- Registros de seguridad: hasta 1 año (prevención de fraude)
-- Datos anonimizados: indefinido (estadísticas agregadas)
-- Solicitudes legales: hasta resolución
+### Eliminación de Cuenta (`delete-account.html`)
+- Pasos para solicitar eliminación
+- Tipos de datos que se eliminan
+- Datos que se conservan
+- Tiempos de procesamiento
 
-## 🔄 Actualizar las Páginas
+## 🔄 Actualizar el Sitio
 
-Para actualizar cualquier página:
+Para actualizar cualquier archivo:
 
 ```bash
 # Edita los archivos HTML
 git add .
-git commit -m "Actualizar páginas legales"
+git commit -m "Actualizar sitio web"
 git push
 ```
 
@@ -112,5 +120,6 @@ GitHub Pages se actualizará automáticamente en 1-5 minutos.
 
 Para preguntas sobre privacidad o eliminación de cuenta:
 - **Email**: astronixdigital@gmail.com
+- **Sitio Web**: https://astronixdigital.com
 - **Desarrollador**: Astronix Digital
 - **App**: SyntaxHero (Google Play Store)
